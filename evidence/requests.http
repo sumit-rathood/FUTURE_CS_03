@@ -1,0 +1,7 @@
+### JSONPlaceholder demo API — read-only request 1
+GET https://jsonplaceholder.typicode.com/posts/1
+Accept: application/json
+
+### JSONPlaceholder demo API — read-only request 2
+GET https://jsonplaceholder.typicode.com/users/1
+Accept: application/json

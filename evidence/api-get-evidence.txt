@@ -1,0 +1,31 @@
+JSONPlaceholder read-only evidence capture
+Capture date: 2026-10-23 (local date, Asia/Kolkata)
+Client: PowerShell Invoke-WebRequest
+Scope: one GET to each documented demo endpoint; no request body; no authentication.
+
+Request 1
+GET https://jsonplaceholder.typicode.com/posts/1
+Observed status: 200
+Observed content type: application/json; charset=utf-8
+Observed selected headers:
+  X-Content-Type-Options: nosniff
+  X-Powered-By: Express
+  Access-Control-Allow-Credentials: true
+  Vary: Origin, Accept-Encoding
+  x-ratelimit-limit: 3600000
+  x-ratelimit-remaining: 3599999
+Observed response: one synthetic post object (id/title/body/userId); body omitted from this log.
+
+Request 2
+GET https://jsonplaceholder.typicode.com/users/1
+Observed status: 200
+Observed content type: application/json; charset=utf-8
+Observed selected headers: same selected header set as request 1.
+Observed response: synthetic user object with fields including id, name, username, email, address, phone, website, and company. Values are deliberately omitted because they resemble contact data.
+
+Interpretation limits
+- JSONPlaceholder describes its records as fake data; no real personal-data disclosure is established.
+- X-Powered-By: Express is technology fingerprinting only; no framework version or exploitable weakness was established.
+- Rate-limit headers appeared, but rate limiting was not stress-tested.
+- Access-Control-Allow-Credentials alone does not establish a CORS flaw. No Origin request header was sent and no ACAO policy was assessed.
+- Authentication, BOLA/authorization, input validation, and write controls were not tested.

@@ -1,0 +1,25 @@
+{
+  "info": {
+    "name": "FUTURE_CS_03 - JSONPlaceholder read-only checks",
+    "description": "Two low-volume GET requests used in the report. No writes, fuzzing, ID enumeration, or load tests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET post 1",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "https://jsonplaceholder.typicode.com/posts/1"
+      }
+    },
+    {
+      "name": "GET user 1",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "https://jsonplaceholder.typicode.com/users/1"
+      }
+    }
+  ]
+}
